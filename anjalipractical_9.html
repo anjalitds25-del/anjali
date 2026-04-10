@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS3 Showcase</title>
+    <!-- [Google Fonts](https://google.com) for modern typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- [Font Awesome](https://fontawesome.com) for scalable vector icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: var(--text-color);
+            background: #f4f7f6;
+        }
+
+        /* Hero Section with Animation */
+        .hero {
+            height: 40vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        /* [CSS3 Animations](https://mozilla.org) */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* [CSS3 Multi-column Layout](https://w3schools.com) */
+        .content-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            column-count: 3;
+            column-gap: 40px;
+            column-rule: 1px solid #ddd;
+        }
+
+        /* [CSS3 Transformations](https://w3schools.com) */
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+            break-inside: avoid; /* Prevents column breaks inside cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Breakpoints using [Media Queries](https://mozilla.org) */
+        @media (max-width: 768px) {
+            .content-section {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section {
+                column-count: 1;
+            }
+            .hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>CSS3 Feature Showcase</h1>
+        <p>Responsive • Animated • Multi-column</p>
+    </section>
+
+    <div class="content-section">
+        <div class="card">
+            <i class="fas fa-rocket"></i>
+            <h3>Animations</h3>
+            <p>This page uses keyframe animations to fade in the header upon loading, creating a smooth entrance.</p>
+        </div>
+        
+        <div class="card">
+            <i class="fas fa-columns"></i>
+            <h3>Multi-Column</h3>
+            <p>The layout uses CSS columns to flow text and cards automatically across the screen width.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive</h3>
+            <p>Using media queries, this layout shifts from 3 columns on desktop to 1 column on mobile devices.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-magic"></i>
+            <h3>Transform</h3>
+            <p>Hover over these cards to see CSS3 scale and rotate transformations in action.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-font"></i>
+            <h3>Web Fonts</h3>
+            <p>Custom Google Fonts (Poppins) are integrated for a modern, professional typographic feel.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-icons"></i>
+            <h3>Scalable Icons</h3>
+            <p>Font Awesome icons provide sharp, vector-based visuals that scale perfectly on any screen.</p>
+        </div>
+    </div>
+
+</body>
+</html>
